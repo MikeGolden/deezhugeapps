@@ -1,10 +1,13 @@
-import type { Config } from 'tailwindcss'
+import TypographyPlugin from '@tailwindcss/typography';
+import FormPlugin from '@tailwindcss/forms';
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/**/*.{ts,tsx}'
   ],
   theme: {
     extend: {
@@ -15,6 +18,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [TypographyPlugin, FormPlugin],
 }
-export default config
+export default config;
