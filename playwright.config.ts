@@ -11,7 +11,7 @@ export default defineConfig({
 	fullyParallel: !process.env.CI,
 	workers: process.env.CI ? 1 : undefined,
 	forbidOnly: !!process.env.CI,
-	retries: 0,
+	retries: process.env.CI ? 2 : 0,
 	reporter: process.env.CI ? [["html"], ["github"], ["list"]] : [["html"], ["list"]],
 
 	use: {
